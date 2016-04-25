@@ -14,6 +14,9 @@
 		3619A8451BAB014D00314E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3619A8431BAB014D00314E3C /* LaunchScreen.storyboard */; };
 		3619A8501BAB014D00314E3C /* Pedestrian_StatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619A84F1BAB014D00314E3C /* Pedestrian_StatusTests.swift */; };
 		3619A85B1BAB014D00314E3C /* Pedestrian_StatusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619A85A1BAB014D00314E3C /* Pedestrian_StatusUITests.swift */; };
+		36544A3C1BAC0D35006FE574 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36544A3B1BAC0D35006FE574 /* CoreMotion.framework */; };
+		365E8B361CCD3B7300920139 /* GraphingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365E8B351CCD3B7300920139 /* GraphingViewController.swift */; };
+		3688EB141BEC98EE00117EE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3688EB131BEC98EE00117EE8 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		3619A8561BAB014D00314E3C /* Pedestrian StatusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pedestrian StatusUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3619A85A1BAB014D00314E3C /* Pedestrian_StatusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedestrian_StatusUITests.swift; sourceTree = "<group>"; };
 		3619A85C1BAB014D00314E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36544A3B1BAC0D35006FE574 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		365E8B351CCD3B7300920139 /* GraphingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphingViewController.swift; sourceTree = "<group>"; };
+		3688EB131BEC98EE00117EE8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3688EB141BEC98EE00117EE8 /* CoreLocation.framework in Frameworks */,
+				36544A3C1BAC0D35006FE574 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +85,8 @@
 		3619A82E1BAB014D00314E3C = {
 			isa = PBXGroup;
 			children = (
+				3688EB131BEC98EE00117EE8 /* CoreLocation.framework */,
+				36544A3B1BAC0D35006FE574 /* CoreMotion.framework */,
 				3619A8391BAB014D00314E3C /* Pedestrian Status */,
 				3619A84E1BAB014D00314E3C /* Pedestrian StatusTests */,
 				3619A8591BAB014D00314E3C /* Pedestrian StatusUITests */,
@@ -99,6 +109,7 @@
 			children = (
 				3619A83A1BAB014D00314E3C /* AppDelegate.swift */,
 				3619A83C1BAB014D00314E3C /* ViewController.swift */,
+				365E8B351CCD3B7300920139 /* GraphingViewController.swift */,
 				3619A83E1BAB014D00314E3C /* Main.storyboard */,
 				3619A8411BAB014D00314E3C /* Assets.xcassets */,
 				3619A8431BAB014D00314E3C /* LaunchScreen.storyboard */,
@@ -187,6 +198,7 @@
 		3619A82F1BAB014D00314E3C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Can Sürmeli";
 				TargetAttributes = {
@@ -257,6 +269,7 @@
 			files = (
 				3619A83D1BAB014D00314E3C /* ViewController.swift in Sources */,
 				3619A83B1BAB014D00314E3C /* AppDelegate.swift in Sources */,
+				365E8B361CCD3B7300920139 /* GraphingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Pedestrian Status/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.can.Pedestrian-Status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,6 +422,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Pedestrian Status/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.can.Pedestrian-Status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -481,6 +496,7 @@
 				3619A8611BAB014D00314E3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3619A8621BAB014D00314E3C /* Build configuration list for PBXNativeTarget "Pedestrian StatusTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +505,7 @@
 				3619A8641BAB014D00314E3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3619A8651BAB014D00314E3C /* Build configuration list for PBXNativeTarget "Pedestrian StatusUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +514,7 @@
 				3619A8671BAB014D00314E3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
