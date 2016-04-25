@@ -220,25 +220,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 			previousZValue = filteredZAcceleration
 		}
 
-		// Retrieve the raw x-y-x axis values
+		// Retrieve the raw x-axis value and apply low-pass filter on it
 		xAcceleration = acceleration.x.roundTo(roundingPrecision)
+    print("Raw X: \(xAcceleration)")
+    filteredXAcceleration = xAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousXValue).roundTo(roundingPrecision)
+    print("Filtered X: \(filteredXAcceleration)")
+
+    // Retrieve the raw y-axis value and apply low-pass filter on it
 		yAcceleration = acceleration.y.roundTo(roundingPrecision)
+    print("Raw Y: \(yAcceleration)")
+    filteredYAcceleration = yAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousYValue).roundTo(roundingPrecision)
+    print("Filtered Y: \(filteredYAcceleration)")
+
+    // Retrieve the raw z-axis value and apply low-pass filter on it
 		zAcceleration = acceleration.z.roundTo(roundingPrecision)
-
-		// Log the raw x-y-x axis values
-		print("Raw X: \(xAcceleration)")
-		print("Raw Y: \(yAcceleration)")
-		print("Raw Z: \(zAcceleration)")
-
-		// Apply low-pass filter on the raw x-y-z axis values
-		filteredXAcceleration = xAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousXValue).roundTo(roundingPrecision)
-		filteredYAcceleration = yAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousYValue).roundTo(roundingPrecision)
-		filteredZAcceleration = zAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousZValue).roundTo(roundingPrecision)
-
-		// Log the low-pass filtered x-y-x axis values
-		print("Filtered X: \(filteredXAcceleration)")
-		print("Filtered Y: \(filteredYAcceleration)")
-		print("Filtered Z: \(filteredZAcceleration)\n")
+    print("Raw Z: \(zAcceleration)")
+    filteredZAcceleration = zAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousZValue).roundTo(roundingPrecision)
+    print("Filtered Z: \(filteredZAcceleration)\n")
 
 		// EUCLIDEAN NORM CALCULATION
 		// Take the squares to the low-pass filtered x-y-z axis values
