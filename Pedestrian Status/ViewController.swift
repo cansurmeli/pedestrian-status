@@ -11,10 +11,10 @@ import CoreLocation
 import CoreMotion
 
 extension Double {
-	func roundTo(precision: Int) -> Double {
-		let divisor = pow(10.0, Double(precision))
-		return round(self * divisor) / divisor
-	}
+    mutating func roundTo(_ places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
 }
 
 /*
@@ -27,7 +27,7 @@ extension Double {
 		https://gist.github.com/kristopherjohnson/0b0442c9b261f44cf19a
 */
 extension Double {
-	func lowPassFilter(filterFactor: Double, previousValue: Double) -> Double {
+	func lowPassFilter(_ filterFactor: Double, previousValue: Double) -> Double {
 		return (previousValue * filterFactor/100) + (self * (1 - filterFactor/100))
 	}
 }
@@ -116,7 +116,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 		}
 	}
 
-	var magneticHeading: CLLocationDirection! {
+	var magneticHeading: Double = 0.0  {
 		didSet {
 			magneticHeadingLabel.text = String(magneticHeading)
 		}
@@ -141,20 +141,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 		motionManager.accelerometerUpdateInterval = accelerometerUpdateInterval
 
 		// Initiate accelerometer updates
-		motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) { (accelerometerData: CMAccelerometerData?, error: NSError?) -> Void in
-			if((error) != nil) {
-				print(error)
-			} else {
-				self.estimatePedestrianStatus((accelerometerData?.acceleration)!)
-			}
-		}
+        motionManager.startAccelerometerUpdates(to: OperationQueue.current!) { (accelerometerData:CMAccelerometerData?, error:Error?) in
+            if((error) != nil) {
+                print(error ?? "startAccelerometerUpdates Error")
+            } else {
+                self.estimatePedestrianStatus((accelerometerData?.acceleration)!)
+            }
+        }
 
-    filterPercentageSlider.continuous = true
+    filterPercentageSlider.isContinuous = true
 	}
 
 	// MARK: CoreLocation Delagate Methods
-	override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-		if motion == .MotionShake {
+	override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+		if motion == .motionShake {
 			stepCount = 0
 			pedestrianStatus = "restarted"
 			magneticHeading = 0
@@ -162,9 +162,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	}
 
 	// Get the compass direction
-	func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+	func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
 		magneticHeading = newHeading.trueHeading
-
+        
 		let diff = (newHeading.trueHeading - newHeading.magneticHeading)
 
 		if (0.0+diff <= magneticHeading) && (magneticHeading <= 90.0+diff) {
@@ -181,7 +181,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	// MARK: Supplementary Methods
 	// Get the slider value for the percentage of the low-pass filter
 
-	@IBAction func changeFilterPercentage(slider: UISlider) {
+	@IBAction func changeFilterPercentage(_ slider: UISlider) {
 //    print(roundf(slider.value))
     lowPassFilterPercentage = Double(roundf(slider.value))
 
@@ -189,7 +189,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	}
 
 	// A UISegmentedControl for controlling the filter percentage
-	@IBAction func changeAccelerometerValueType(sender: UISegmentedControl) {
+	@IBAction func changeAccelerometerValueType(_ sender: UISegmentedControl) {
 		switch sender.selectedSegmentIndex {
 		case 0 :
 			shouldApplyFilter = false
@@ -202,7 +202,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 		}
 	}
 
-	func estimatePedestrianStatus(acceleration: CMAcceleration) {
+	func estimatePedestrianStatus(_ acceleration: CMAcceleration) {
 		// If it's the first time accelerometer data obtained,
 		// get old values as zero since there was no data before.
 		// Otherwise get the previous value from the cycle before.
@@ -220,30 +220,39 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 			previousZValue = filteredZAcceleration
 		}
 
-		// Retrieve the raw x-axis value and apply low-pass filter on it
-		xAcceleration = acceleration.x.roundTo(roundingPrecision)
-    print("Raw X: \(xAcceleration)")
-    filteredXAcceleration = xAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousXValue).roundTo(roundingPrecision)
-    print("Filtered X: \(filteredXAcceleration)")
-
-    // Retrieve the raw y-axis value and apply low-pass filter on it
-		yAcceleration = acceleration.y.roundTo(roundingPrecision)
-    print("Raw Y: \(yAcceleration)")
-    filteredYAcceleration = yAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousYValue).roundTo(roundingPrecision)
-    print("Filtered Y: \(filteredYAcceleration)")
-
-    // Retrieve the raw z-axis value and apply low-pass filter on it
-		zAcceleration = acceleration.z.roundTo(roundingPrecision)
-    print("Raw Z: \(zAcceleration)")
-    filteredZAcceleration = zAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousZValue).roundTo(roundingPrecision)
-    print("Filtered Z: \(filteredZAcceleration)\n")
-
-		// EUCLIDEAN NORM CALCULATION
-		// Take the squares to the low-pass filtered x-y-z axis values
-		let xAccelerationSquared = (filteredXAcceleration * filteredXAcceleration).roundTo(roundingPrecision)
-		let yAccelerationSquared = (filteredYAcceleration * filteredYAcceleration).roundTo(roundingPrecision)
-		let zAccelerationSquared = (filteredZAcceleration * filteredZAcceleration).roundTo(roundingPrecision)
-
+        // Retrieve the raw x-axis value and apply low-pass filter on it
+        var x_aixs = acceleration.x
+        xAcceleration = x_aixs.roundTo(roundingPrecision)
+        print("Raw X: \(xAcceleration)")
+        var lowPassFilter_x = xAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousXValue)
+        filteredXAcceleration = lowPassFilter_x.roundTo(roundingPrecision)
+        print("Filtered X: \(filteredXAcceleration)")
+        
+        // Retrieve the raw y-axis value and apply low-pass filter on it
+        var y_aixs = acceleration.y
+        yAcceleration = y_aixs.roundTo(roundingPrecision)
+        print("Raw Y: \(yAcceleration)")
+        var lowPassFilter_y = yAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousYValue)
+        filteredYAcceleration = lowPassFilter_y.roundTo(roundingPrecision)
+        print("Filtered Y: \(filteredYAcceleration)")
+        
+        // Retrieve the raw z-axis value and apply low-pass filter on it
+        var z_aixs = acceleration.z
+        zAcceleration = z_aixs.roundTo(roundingPrecision)
+        print("Raw Z: \(zAcceleration)")
+        var lowPassFilter_z = zAcceleration.lowPassFilter(lowPassFilterPercentage, previousValue: previousZValue)
+        filteredZAcceleration = lowPassFilter_z.roundTo(roundingPrecision)
+        print("Filtered Z: \(filteredZAcceleration)\n")
+        
+        // EUCLIDEAN NORM CALCULATION
+        // Take the squares to the low-pass filtered x-y-z axis values
+        var filteredXAcc = filteredXAcceleration * filteredXAcceleration
+        let xAccelerationSquared = filteredXAcc.roundTo(roundingPrecision)
+        var filteredYAcc = filteredYAcceleration * filteredYAcceleration
+        let yAccelerationSquared = filteredYAcc.roundTo(roundingPrecision)
+        var filteredZAcc = filteredZAcceleration * filteredZAcceleration
+        let zAccelerationSquared = filteredZAcc.roundTo(roundingPrecision)
+        
 		// Calculate the Euclidean Norm of the x-y-z axis values
 		accelerometerDataInEuclideanNorm = sqrt(xAccelerationSquared + yAccelerationSquared + zAccelerationSquared)
 
@@ -270,16 +279,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 			accelerometerDataCount = 0	// reset for the next round
 
 			// Calculating the variance of the Euclidian Norm of the accelerometer data
-			let accelerationMean = (totalAcceleration / 10).roundTo(roundingPrecision)
+            var num = totalAcceleration / 10
+			let accelerationMean = num.roundTo(roundingPrecision)
 			var total: Double = 0.0
 
 			for data in accelerometerDataInASecond {
-				total += ((data-accelerationMean) * (data-accelerationMean)).roundTo(roundingPrecision)
+                var div = (data-accelerationMean) * (data-accelerationMean)
+				total += div.roundTo(roundingPrecision)
 			}
 
 			total = total.roundTo(roundingPrecision)
-
-			let result = (total / 10).roundTo(roundingPrecision)
+            
+            var numm = total / 10
+			let result = numm.roundTo(roundingPrecision)
 			print("Result: \(result)")
 
 

@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		005EBBCD1DD98CA30059A9ED /* Pedestrian_StatusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 005EBBCC1DD98CA30059A9ED /* Pedestrian_StatusTests.m */; };
 		3619A83B1BAB014D00314E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619A83A1BAB014D00314E3C /* AppDelegate.swift */; };
 		3619A83D1BAB014D00314E3C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619A83C1BAB014D00314E3C /* ViewController.swift */; };
 		3619A8401BAB014D00314E3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3619A83E1BAB014D00314E3C /* Main.storyboard */; };
 		3619A8421BAB014D00314E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3619A8411BAB014D00314E3C /* Assets.xcassets */; };
 		3619A8451BAB014D00314E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3619A8431BAB014D00314E3C /* LaunchScreen.storyboard */; };
-		3619A8501BAB014D00314E3C /* Pedestrian_StatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619A84F1BAB014D00314E3C /* Pedestrian_StatusTests.swift */; };
 		3619A85B1BAB014D00314E3C /* Pedestrian_StatusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619A85A1BAB014D00314E3C /* Pedestrian_StatusUITests.swift */; };
 		36544A3C1BAC0D35006FE574 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36544A3B1BAC0D35006FE574 /* CoreMotion.framework */; };
 		365E8B361CCD3B7300920139 /* GraphingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365E8B351CCD3B7300920139 /* GraphingViewController.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3619A84C1BAB014D00314E3C /* PBXContainerItemProxy */ = {
+		005EBBCF1DD98CA30059A9ED /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3619A82F1BAB014D00314E3C /* Project object */;
 			proxyType = 1;
@@ -37,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		005EBBCA1DD98CA30059A9ED /* Pedestrian StatusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pedestrian StatusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		005EBBCC1DD98CA30059A9ED /* Pedestrian_StatusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pedestrian_StatusTests.m; sourceTree = "<group>"; };
+		005EBBCE1DD98CA30059A9ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3619A8371BAB014D00314E3C /* Pedestrian Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pedestrian Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3619A83A1BAB014D00314E3C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3619A83C1BAB014D00314E3C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,9 +47,6 @@
 		3619A8411BAB014D00314E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3619A8441BAB014D00314E3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3619A8461BAB014D00314E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3619A84B1BAB014D00314E3C /* Pedestrian StatusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pedestrian StatusTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3619A84F1BAB014D00314E3C /* Pedestrian_StatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedestrian_StatusTests.swift; sourceTree = "<group>"; };
-		3619A8511BAB014D00314E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3619A8561BAB014D00314E3C /* Pedestrian StatusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pedestrian StatusUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3619A85A1BAB014D00314E3C /* Pedestrian_StatusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedestrian_StatusUITests.swift; sourceTree = "<group>"; };
 		3619A85C1BAB014D00314E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,19 +56,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		005EBBC71DD98CA30059A9ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3619A8341BAB014D00314E3C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				3688EB141BEC98EE00117EE8 /* CoreLocation.framework in Frameworks */,
 				36544A3C1BAC0D35006FE574 /* CoreMotion.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3619A8481BAB014D00314E3C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,14 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		005EBBCB1DD98CA30059A9ED /* Pedestrian StatusTests */ = {
+			isa = PBXGroup;
+			children = (
+				005EBBCC1DD98CA30059A9ED /* Pedestrian_StatusTests.m */,
+				005EBBCE1DD98CA30059A9ED /* Info.plist */,
+			);
+			path = "Pedestrian StatusTests";
+			sourceTree = "<group>";
+		};
 		3619A82E1BAB014D00314E3C = {
 			isa = PBXGroup;
 			children = (
 				3688EB131BEC98EE00117EE8 /* CoreLocation.framework */,
 				36544A3B1BAC0D35006FE574 /* CoreMotion.framework */,
 				3619A8391BAB014D00314E3C /* Pedestrian Status */,
-				3619A84E1BAB014D00314E3C /* Pedestrian StatusTests */,
 				3619A8591BAB014D00314E3C /* Pedestrian StatusUITests */,
+				005EBBCB1DD98CA30059A9ED /* Pedestrian StatusTests */,
 				3619A8381BAB014D00314E3C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,8 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				3619A8371BAB014D00314E3C /* Pedestrian Status.app */,
-				3619A84B1BAB014D00314E3C /* Pedestrian StatusTests.xctest */,
 				3619A8561BAB014D00314E3C /* Pedestrian StatusUITests.xctest */,
+				005EBBCA1DD98CA30059A9ED /* Pedestrian StatusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,15 +127,6 @@
 			path = "Pedestrian Status";
 			sourceTree = "<group>";
 		};
-		3619A84E1BAB014D00314E3C /* Pedestrian StatusTests */ = {
-			isa = PBXGroup;
-			children = (
-				3619A84F1BAB014D00314E3C /* Pedestrian_StatusTests.swift */,
-				3619A8511BAB014D00314E3C /* Info.plist */,
-			);
-			path = "Pedestrian StatusTests";
-			sourceTree = "<group>";
-		};
 		3619A8591BAB014D00314E3C /* Pedestrian StatusUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +139,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		005EBBC91DD98CA30059A9ED /* Pedestrian StatusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 005EBBD11DD98CA30059A9ED /* Build configuration list for PBXNativeTarget "Pedestrian StatusTests" */;
+			buildPhases = (
+				005EBBC61DD98CA30059A9ED /* Sources */,
+				005EBBC71DD98CA30059A9ED /* Frameworks */,
+				005EBBC81DD98CA30059A9ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				005EBBD01DD98CA30059A9ED /* PBXTargetDependency */,
+			);
+			name = "Pedestrian StatusTests";
+			productName = "Pedestrian StatusTests";
+			productReference = 005EBBCA1DD98CA30059A9ED /* Pedestrian StatusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3619A8361BAB014D00314E3C /* Pedestrian Status */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3619A85F1BAB014D00314E3C /* Build configuration list for PBXNativeTarget "Pedestrian Status" */;
@@ -155,24 +173,6 @@
 			productName = "Pedestrian Status";
 			productReference = 3619A8371BAB014D00314E3C /* Pedestrian Status.app */;
 			productType = "com.apple.product-type.application";
-		};
-		3619A84A1BAB014D00314E3C /* Pedestrian StatusTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3619A8621BAB014D00314E3C /* Build configuration list for PBXNativeTarget "Pedestrian StatusTests" */;
-			buildPhases = (
-				3619A8471BAB014D00314E3C /* Sources */,
-				3619A8481BAB014D00314E3C /* Frameworks */,
-				3619A8491BAB014D00314E3C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3619A84D1BAB014D00314E3C /* PBXTargetDependency */,
-			);
-			name = "Pedestrian StatusTests";
-			productName = "Pedestrian StatusTests";
-			productReference = 3619A84B1BAB014D00314E3C /* Pedestrian StatusTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		3619A8551BAB014D00314E3C /* Pedestrian StatusUITests */ = {
 			isa = PBXNativeTarget;
@@ -202,15 +202,19 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Can Sürmeli";
 				TargetAttributes = {
+					005EBBC91DD98CA30059A9ED = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3619A8361BAB014D00314E3C;
+					};
 					3619A8361BAB014D00314E3C = {
 						CreatedOnToolsVersion = 7.0;
-					};
-					3619A84A1BAB014D00314E3C = {
-						CreatedOnToolsVersion = 7.0;
-						TestTargetID = 3619A8361BAB014D00314E3C;
+						DevelopmentTeam = W7YDEDGW4E;
+						LastSwiftMigration = 0810;
 					};
 					3619A8551BAB014D00314E3C = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0810;
 						TestTargetID = 3619A8361BAB014D00314E3C;
 					};
 				};
@@ -229,13 +233,20 @@
 			projectRoot = "";
 			targets = (
 				3619A8361BAB014D00314E3C /* Pedestrian Status */,
-				3619A84A1BAB014D00314E3C /* Pedestrian StatusTests */,
 				3619A8551BAB014D00314E3C /* Pedestrian StatusUITests */,
+				005EBBC91DD98CA30059A9ED /* Pedestrian StatusTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		005EBBC81DD98CA30059A9ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3619A8351BAB014D00314E3C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,13 +254,6 @@
 				3619A8451BAB014D00314E3C /* LaunchScreen.storyboard in Resources */,
 				3619A8421BAB014D00314E3C /* Assets.xcassets in Resources */,
 				3619A8401BAB014D00314E3C /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3619A8491BAB014D00314E3C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +267,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		005EBBC61DD98CA30059A9ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				005EBBCD1DD98CA30059A9ED /* Pedestrian_StatusTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3619A8331BAB014D00314E3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -270,14 +282,6 @@
 				3619A83D1BAB014D00314E3C /* ViewController.swift in Sources */,
 				3619A83B1BAB014D00314E3C /* AppDelegate.swift in Sources */,
 				365E8B361CCD3B7300920139 /* GraphingViewController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3619A8471BAB014D00314E3C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3619A8501BAB014D00314E3C /* Pedestrian_StatusTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,10 +296,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3619A84D1BAB014D00314E3C /* PBXTargetDependency */ = {
+		005EBBD01DD98CA30059A9ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3619A8361BAB014D00314E3C /* Pedestrian Status */;
-			targetProxy = 3619A84C1BAB014D00314E3C /* PBXContainerItemProxy */;
+			targetProxy = 005EBBCF1DD98CA30059A9ED /* PBXContainerItemProxy */;
 		};
 		3619A8581BAB014D00314E3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -324,6 +328,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		005EBBD21DD98CA30059A9ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Pedestrian StatusTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TalkingData.Pedestrian-StatusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pedestrian Status.app/Pedestrian Status";
+			};
+			name = Debug;
+		};
+		005EBBD31DD98CA30059A9ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "Pedestrian StatusTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.TalkingData.Pedestrian-StatusTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pedestrian Status.app/Pedestrian Status";
+			};
+			name = Release;
+		};
 		3619A85D1BAB014D00314E3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -409,11 +451,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W7YDEDGW4E;
 				INFOPLIST_FILE = "Pedestrian Status/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.can.Pedestrian-Status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -421,35 +465,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = W7YDEDGW4E;
 				INFOPLIST_FILE = "Pedestrian Status/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.can.Pedestrian-Status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		3619A8631BAB014D00314E3C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Pedestrian StatusTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.can.Pedestrian-StatusTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pedestrian Status.app/Pedestrian Status";
-			};
-			name = Debug;
-		};
-		3619A8641BAB014D00314E3C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Pedestrian StatusTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.can.Pedestrian-StatusTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pedestrian Status.app/Pedestrian Status";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -460,6 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.can.Pedestrian-StatusUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Pedestrian Status";
 				USES_XCTRUNNER = YES;
 			};
@@ -472,6 +495,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.can.Pedestrian-StatusUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = "Pedestrian Status";
 				USES_XCTRUNNER = YES;
 			};
@@ -480,6 +504,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		005EBBD11DD98CA30059A9ED /* Build configuration list for PBXNativeTarget "Pedestrian StatusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				005EBBD21DD98CA30059A9ED /* Debug */,
+				005EBBD31DD98CA30059A9ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		3619A8321BAB014D00314E3C /* Build configuration list for PBXProject "Pedestrian Status" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -494,15 +526,6 @@
 			buildConfigurations = (
 				3619A8601BAB014D00314E3C /* Debug */,
 				3619A8611BAB014D00314E3C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3619A8621BAB014D00314E3C /* Build configuration list for PBXNativeTarget "Pedestrian StatusTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3619A8631BAB014D00314E3C /* Debug */,
-				3619A8641BAB014D00314E3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
