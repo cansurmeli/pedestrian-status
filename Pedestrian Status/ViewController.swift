@@ -11,9 +11,9 @@ import CoreLocation
 import CoreMotion
 
 extension Double {
-	func roundTo(precision: Int) -> Double {
+	func roundTo(_ precision: Int) -> Double {
 		let divisor = pow(10.0, Double(precision))
-		return round(self * divisor) / divisor
+		return Darwin.round(self * divisor) / divisor
 	}
 }
 
@@ -27,7 +27,7 @@ extension Double {
 		https://gist.github.com/kristopherjohnson/0b0442c9b261f44cf19a
 */
 extension Double {
-	func lowPassFilter(filterFactor: Double, previousValue: Double) -> Double {
+	func lowPassFilter(_ filterFactor: Double, previousValue: Double) -> Double {
 		return (previousValue * filterFactor/100) + (self * (1 - filterFactor/100))
 	}
 }
@@ -141,20 +141,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 		motionManager.accelerometerUpdateInterval = accelerometerUpdateInterval
 
 		// Initiate accelerometer updates
-		motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue.mainQueue()) { (accelerometerData: CMAccelerometerData?, error: NSError?) -> Void in
+		motionManager.startAccelerometerUpdates(to: OperationQueue.main) { [weak self] (accelerometerData: CMAccelerometerData?, error: Error?) in
 			if((error) != nil) {
-				print(error)
+				print(error ?? "Unknown error")
 			} else {
-				self.estimatePedestrianStatus((accelerometerData?.acceleration)!)
+				self?.estimatePedestrianStatus((accelerometerData?.acceleration)!)
 			}
 		}
 
-    filterPercentageSlider.continuous = true
+    filterPercentageSlider.isContinuous = true
 	}
 
 	// MARK: CoreLocation Delagate Methods
-	override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-		if motion == .MotionShake {
+	override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+		if motion == .motionShake {
 			stepCount = 0
 			pedestrianStatus = "restarted"
 			magneticHeading = 0
@@ -162,7 +162,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	}
 
 	// Get the compass direction
-	func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+	func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
 		magneticHeading = newHeading.trueHeading
 
 		let diff = (newHeading.trueHeading - newHeading.magneticHeading)
@@ -181,7 +181,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	// MARK: Supplementary Methods
 	// Get the slider value for the percentage of the low-pass filter
 
-	@IBAction func changeFilterPercentage(slider: UISlider) {
+	@IBAction func changeFilterPercentage(_ slider: UISlider) {
 //    print(roundf(slider.value))
     lowPassFilterPercentage = Double(roundf(slider.value))
 
@@ -189,7 +189,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 	}
 
 	// A UISegmentedControl for controlling the filter percentage
-	@IBAction func changeAccelerometerValueType(sender: UISegmentedControl) {
+	@IBAction func changeAccelerometerValueType(_ sender: UISegmentedControl) {
 		switch sender.selectedSegmentIndex {
 		case 0 :
 			shouldApplyFilter = false
@@ -202,7 +202,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 		}
 	}
 
-	func estimatePedestrianStatus(acceleration: CMAcceleration) {
+	func estimatePedestrianStatus(_ acceleration: CMAcceleration) {
 		// If it's the first time accelerometer data obtained,
 		// get old values as zero since there was no data before.
 		// Otherwise get the previous value from the cycle before.
