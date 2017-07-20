@@ -57,17 +57,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
 	var xAcceleration: Double! {
 		didSet {
-			xAccelerationLabel.text = "\(xAcceleration)"
+			xAccelerationLabel.text = "\(xAcceleration!)"
 		}
 	}
 	var yAcceleration: Double! {
 		didSet {
-			yAccelerationLabel.text = "\(yAcceleration)"
+			yAccelerationLabel.text = "\(yAcceleration!)"
 		}
 	}
 	var zAcceleration: Double! {
 		didSet {
-			zAccelerationLabel.text = "\(zAcceleration)"
+			zAccelerationLabel.text = "\(zAcceleration!)"
 		}
 	}
 
