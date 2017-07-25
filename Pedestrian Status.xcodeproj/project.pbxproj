@@ -14,8 +14,11 @@
 		3619A8451BAB014D00314E3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3619A8431BAB014D00314E3C /* LaunchScreen.storyboard */; };
 		3619A8501BAB014D00314E3C /* Pedestrian_StatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619A84F1BAB014D00314E3C /* Pedestrian_StatusTests.swift */; };
 		3619A85B1BAB014D00314E3C /* Pedestrian_StatusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3619A85A1BAB014D00314E3C /* Pedestrian_StatusUITests.swift */; };
+		3646227B1F2736EB00691693 /* Double+RoundToPrecision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646227A1F2736EB00691693 /* Double+RoundToPrecision.swift */; };
+		3646227D1F27370F00691693 /* Double+LowPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646227C1F27370F00691693 /* Double+LowPassFilter.swift */; };
+		364622831F27378900691693 /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364622821F27378900691693 /* LocationManagerDelegate.swift */; };
+		364622851F2737F500691693 /* EstimatePedestrianStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364622841F2737F500691693 /* EstimatePedestrianStatus.swift */; };
 		36544A3C1BAC0D35006FE574 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36544A3B1BAC0D35006FE574 /* CoreMotion.framework */; };
-		365E8B361CCD3B7300920139 /* GraphingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365E8B351CCD3B7300920139 /* GraphingViewController.swift */; };
 		3688EB141BEC98EE00117EE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3688EB131BEC98EE00117EE8 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +53,11 @@
 		3619A8561BAB014D00314E3C /* Pedestrian StatusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pedestrian StatusUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3619A85A1BAB014D00314E3C /* Pedestrian_StatusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedestrian_StatusUITests.swift; sourceTree = "<group>"; };
 		3619A85C1BAB014D00314E3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3646227A1F2736EB00691693 /* Double+RoundToPrecision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+RoundToPrecision.swift"; sourceTree = "<group>"; };
+		3646227C1F27370F00691693 /* Double+LowPassFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+LowPassFilter.swift"; sourceTree = "<group>"; };
+		364622821F27378900691693 /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
+		364622841F2737F500691693 /* EstimatePedestrianStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstimatePedestrianStatus.swift; sourceTree = "<group>"; };
 		36544A3B1BAC0D35006FE574 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		365E8B351CCD3B7300920139 /* GraphingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphingViewController.swift; sourceTree = "<group>"; };
 		3688EB131BEC98EE00117EE8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -107,13 +113,11 @@
 		3619A8391BAB014D00314E3C /* Pedestrian Status */ = {
 			isa = PBXGroup;
 			children = (
-				3619A83A1BAB014D00314E3C /* AppDelegate.swift */,
-				3619A83C1BAB014D00314E3C /* ViewController.swift */,
-				365E8B351CCD3B7300920139 /* GraphingViewController.swift */,
-				3619A83E1BAB014D00314E3C /* Main.storyboard */,
-				3619A8411BAB014D00314E3C /* Assets.xcassets */,
-				3619A8431BAB014D00314E3C /* LaunchScreen.storyboard */,
-				3619A8461BAB014D00314E3C /* Info.plist */,
+				364622781F2736D000691693 /* Extension */,
+				364622801F27375900691693 /* Other */,
+				364622811F27376400691693 /* Controller */,
+				3646227F1F27374E00691693 /* View */,
+				3646227E1F27373E00691693 /* Store */,
 			);
 			path = "Pedestrian Status";
 			sourceTree = "<group>";
@@ -134,6 +138,59 @@
 				3619A85C1BAB014D00314E3C /* Info.plist */,
 			);
 			path = "Pedestrian StatusUITests";
+			sourceTree = "<group>";
+		};
+		364622781F2736D000691693 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				364622791F2736DA00691693 /* Double */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		364622791F2736DA00691693 /* Double */ = {
+			isa = PBXGroup;
+			children = (
+				3646227A1F2736EB00691693 /* Double+RoundToPrecision.swift */,
+				3646227C1F27370F00691693 /* Double+LowPassFilter.swift */,
+			);
+			path = Double;
+			sourceTree = "<group>";
+		};
+		3646227E1F27373E00691693 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				3619A8411BAB014D00314E3C /* Assets.xcassets */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		3646227F1F27374E00691693 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3619A83E1BAB014D00314E3C /* Main.storyboard */,
+				3619A8431BAB014D00314E3C /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		364622801F27375900691693 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				3619A83A1BAB014D00314E3C /* AppDelegate.swift */,
+				3619A8461BAB014D00314E3C /* Info.plist */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		364622811F27376400691693 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3619A83C1BAB014D00314E3C /* ViewController.swift */,
+				364622841F2737F500691693 /* EstimatePedestrianStatus.swift */,
+				364622821F27378900691693 /* LocationManagerDelegate.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +261,7 @@
 				TargetAttributes = {
 					3619A8361BAB014D00314E3C = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 3KDTV5NX96;
 						LastSwiftMigration = 0900;
 					};
 					3619A84A1BAB014D00314E3C = {
@@ -271,8 +329,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3619A83D1BAB014D00314E3C /* ViewController.swift in Sources */,
+				364622831F27378900691693 /* LocationManagerDelegate.swift in Sources */,
+				3646227B1F2736EB00691693 /* Double+RoundToPrecision.swift in Sources */,
+				3646227D1F27370F00691693 /* Double+LowPassFilter.swift in Sources */,
+				364622851F2737F500691693 /* EstimatePedestrianStatus.swift in Sources */,
 				3619A83B1BAB014D00314E3C /* AppDelegate.swift in Sources */,
-				365E8B361CCD3B7300920139 /* GraphingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +490,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3KDTV5NX96;
 				INFOPLIST_FILE = "Pedestrian Status/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -443,6 +505,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3KDTV5NX96;
 				INFOPLIST_FILE = "Pedestrian Status/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
