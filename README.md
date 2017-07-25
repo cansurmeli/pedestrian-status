@@ -23,8 +23,8 @@ Just download the project and run it on an iPhone.
 An iPad will also work but it’s more appropriate to move with an iPhone.
 
 ## Requirements
-- Xcode 7.0 or higher
-- Swift 2.0
+- Xcode 9 beta 1 or higher
+- Swift 4.0
 - ARC
 
 ## Future Work
