@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 import CoreMotion
 
-class ViewController: UIViewController {
+class StepCountVC: UIViewController {
 	@IBOutlet weak var xAccelerationLabel: UILabel!
 	@IBOutlet weak var filteredXAccelerationLabel: UILabel!
 	@IBOutlet weak var yAccelerationLabel: UILabel!

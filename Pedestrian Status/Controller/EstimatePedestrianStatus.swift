@@ -9,7 +9,7 @@
 import Foundation
 import CoreMotion
 
-extension ViewController {
+extension StepCountVC {
 	func estimatePedestrianStatus(_ acceleration: CMAcceleration) {
 		// If it's the first time accelerometer data obtained,
 		// get old values as zero since there was no data before.

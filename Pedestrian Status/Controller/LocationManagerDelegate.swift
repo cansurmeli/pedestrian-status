@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreLocation
 
-extension ViewController: CLLocationManagerDelegate {
+extension StepCountVC: CLLocationManagerDelegate {
 	func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
 		magneticHeading = newHeading.trueHeading
 
