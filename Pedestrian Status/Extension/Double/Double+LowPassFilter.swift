@@ -19,6 +19,9 @@ https://gist.github.com/kristopherjohnson/0b0442c9b261f44cf19a
 */
 extension Double {
 	func lowPassFilter(_ filterFactor: Double, previousValue: Double) -> Double {
-		return (previousValue * filterFactor/100) + (self * (1 - filterFactor/100))
+		let firstSection = previousValue * filterFactor / 100
+		let secondSection = (self * (1 - filterFactor / 100))
+
+		return (firstSection + secondSection).round()
 	}
 }
