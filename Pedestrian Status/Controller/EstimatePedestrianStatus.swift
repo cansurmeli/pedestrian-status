@@ -12,37 +12,20 @@ import CoreMotion
 extension PedestrianStatusVC {
 	func estimatePedestrianStatus(_ acceleration: CMAcceleration) {
 		// MARK: Accelerometer Data Retrieval
-		// If it's the first time accelerometer data is being obtained,
-		// get old values as zero since there was no data before.
-		// Otherwise get the previous value from the cycle before.
-		// This is done for the purpose of the low-pass filter.
-		// It requires the previous cycle's data.
-		if didRetrieveAccelerometerDataBefore {
-			previousXValue = filteredXAcceleration
-			previousYValue = filteredYAcceleration
-			previousZValue = filteredZAcceleration
-		} else {
-			previousXValue = 0.0
-			previousYValue = 0.0
-			previousZValue = 0.0
-
-			didRetrieveAccelerometerDataBefore = true
-		}
-
 		// Retrieve the raw x-axis acceleration and apply low-pass filter on it
 		xAcceleration = acceleration.x.round()
 		filteredXAcceleration = xAcceleration.lowPassFilter(lowPassFilterPercentage,
-		                                                    previousValue: previousXValue)
+		                                                    previousValue: filteredXAcceleration)
 
 		// Retrieve the raw y-axis acceleration and apply low-pass filter on it
 		yAcceleration = acceleration.y.round()
 		filteredYAcceleration = yAcceleration.lowPassFilter(lowPassFilterPercentage,
-		                                                    previousValue: previousYValue)
+		                                                    previousValue: filteredYAcceleration)
 
 		// Retrieve the raw z-axis acceleration and apply low-pass filter on it
 		zAcceleration = acceleration.z.round()
 		filteredZAcceleration = zAcceleration.lowPassFilter(lowPassFilterPercentage,
-		                                                    previousValue: previousZValue)
+		                                                    previousValue: filteredZAcceleration)
 
 		// MARK: Euclidean Norm Calculation
 		// Take the squares to the low-pass filtered x-y-z axis values
@@ -51,7 +34,7 @@ extension PedestrianStatusVC {
 		let zAccelerationSquared = filteredZAcceleration.squared().round()
 
 		// Calculate the Euclidean Norm of the x-y-z axis values
-		accelerometerDataInEuclideanNorm = sqrt(xAccelerationSquared + yAccelerationSquared + zAccelerationSquared).round()
+		let accelerometerDataInEuclideanNorm = sqrt(xAccelerationSquared + yAccelerationSquared + zAccelerationSquared).round()
 
 		// MARK: Euclidean Norm Variance Calculation
 		// record 10 consecutive euclidean norm values, that
@@ -66,7 +49,6 @@ extension PedestrianStatusVC {
 		}
 
 		// when accelerometer values are recorded
-		// interpret them
 		if accelerometerDataInASecond.count == 10 {
 			// Calculating the variance of the Euclidian Norm of the accelerometer data
 			let accelerationMean = (accelerometerDataInASecond.reduce(0, +) / Double(accelerometerDataInASecond.count)).round()

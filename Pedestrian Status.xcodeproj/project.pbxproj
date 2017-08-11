@@ -22,6 +22,9 @@
 		3646228D1F28AE7600691693 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646228C1F28AE7600691693 /* Double+Round.swift */; };
 		36544A3C1BAC0D35006FE574 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36544A3B1BAC0D35006FE574 /* CoreMotion.framework */; };
 		3688EB141BEC98EE00117EE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3688EB131BEC98EE00117EE8 /* CoreLocation.framework */; };
+		36F3C4051F3CCDF100DF4189 /* LowPassRawAcceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F3C4041F3CCDF100DF4189 /* LowPassRawAcceleration.swift */; };
+		36F3C4071F3CD0EE00DF4189 /* CalculateEuclideanNorm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F3C4061F3CD0EE00DF4189 /* CalculateEuclideanNorm.swift */; };
+		36F3C4091F3CD10C00DF4189 /* CalculateEuclideanNormVariance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F3C4081F3CD10C00DF4189 /* CalculateEuclideanNormVariance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		3646228C1F28AE7600691693 /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
 		36544A3B1BAC0D35006FE574 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		3688EB131BEC98EE00117EE8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		36F3C4041F3CCDF100DF4189 /* LowPassRawAcceleration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowPassRawAcceleration.swift; sourceTree = "<group>"; };
+		36F3C4061F3CD0EE00DF4189 /* CalculateEuclideanNorm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateEuclideanNorm.swift; sourceTree = "<group>"; };
+		36F3C4081F3CD10C00DF4189 /* CalculateEuclideanNormVariance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateEuclideanNormVariance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 		3619A8391BAB014D00314E3C /* Pedestrian Status */ = {
 			isa = PBXGroup;
 			children = (
+				36F3C4031F3CCDDA00DF4189 /* Model */,
 				364622781F2736D000691693 /* Extension */,
 				364622801F27375900691693 /* Other */,
 				364622811F27376400691693 /* Controller */,
@@ -197,6 +204,16 @@
 				364622841F2737F500691693 /* EstimatePedestrianStatus.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		36F3C4031F3CCDDA00DF4189 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				36F3C4041F3CCDF100DF4189 /* LowPassRawAcceleration.swift */,
+				36F3C4061F3CD0EE00DF4189 /* CalculateEuclideanNorm.swift */,
+				36F3C4081F3CD10C00DF4189 /* CalculateEuclideanNormVariance.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,14 +351,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F3C4091F3CD10C00DF4189 /* CalculateEuclideanNormVariance.swift in Sources */,
 				3619A83D1BAB014D00314E3C /* PedestrianStatusVC.swift in Sources */,
 				3646227B1F2736EB00691693 /* Double+RoundToPrecision.swift in Sources */,
+				36F3C4051F3CCDF100DF4189 /* LowPassRawAcceleration.swift in Sources */,
 				3646227D1F27370F00691693 /* Double+LowPassFilter.swift in Sources */,
 				3646228D1F28AE7600691693 /* Double+Round.swift in Sources */,
 				3646228B1F288DE000691693 /* PedestrianStatus.swift in Sources */,
 				364622891F288C8800691693 /* Double+Squared.swift in Sources */,
 				364622851F2737F500691693 /* EstimatePedestrianStatus.swift in Sources */,
 				3619A83B1BAB014D00314E3C /* AppDelegate.swift in Sources */,
+				36F3C4071F3CD0EE00DF4189 /* CalculateEuclideanNorm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

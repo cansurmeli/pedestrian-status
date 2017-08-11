@@ -21,10 +21,6 @@ class PedestrianStatusVC: UIViewController {
 	@IBOutlet weak var filterPercentageLabel: UILabel!
 
 	let motionManager = CMMotionManager()
-	var didRetrieveAccelerometerDataBefore = false
-	var previousXValue: Double!
-	var previousYValue: Double!
-	var previousZValue: Double!
 
 	var xAcceleration: Double! {
 		didSet {
@@ -42,25 +38,24 @@ class PedestrianStatusVC: UIViewController {
 		}
 	}
 
-	var filteredXAcceleration: Double = 0.0 {
+	var filteredXAcceleration = 0.0 {
 		didSet {
 			filteredXAccelerationLabel.text = "\(filteredXAcceleration)"
 		}
 	}
-	var filteredYAcceleration: Double = 0.0 {
+	var filteredYAcceleration = 0.0 {
 		didSet {
 			filteredYAccelerationLabel.text = "\(filteredYAcceleration)"
 		}
 	}
-	var filteredZAcceleration: Double = 0.0 {
+	var filteredZAcceleration = 0.0 {
 		didSet {
 			filteredZAccelerationLabel.text = "\(filteredZAcceleration)"
 		}
 	}
 
-	var accelerometerDataInEuclideanNorm: Double = 0.0
 	var accelerometerDataInASecond = [Double]()
-	var totalAcceleration: Double = 0.0
+	var totalAcceleration = 0.0
   var lowPassFilterPercentage = 15.0 {
 		didSet {
 			filterPercentageLabel.text = "\(Int(lowPassFilterPercentage))%"
@@ -86,12 +81,13 @@ class PedestrianStatusVC: UIViewController {
 
 		motionManager.accelerometerUpdateInterval = PS.Constant.accelerometerUpdateInterval.rawValue
 
-		motionManager.startAccelerometerUpdates(to: OperationQueue.main) { [weak self] (accelerometerData, error) in
-			guard let accelerometerData = accelerometerData else {
-				print(error!)
+		motionManager.startAccelerometerUpdates(to: OperationQueue.main) { [weak self] (data, error) in
+			guard let accelerometerData = data
+				else {
+					print(error!)
 
-				return
-			}
+					return
+				}
 
 			self?.estimatePedestrianStatus(accelerometerData.acceleration)
 		}
