@@ -9,8 +9,9 @@
 import Foundation
 
 extension Double {
-	func roundTo(_ precision: Int) -> Double {
+	func round(to precision: Int) -> Double {
 		let divisor = pow(10.0, Double(precision))
+		
 		return Darwin.round(self * divisor) / divisor
 	}
 }

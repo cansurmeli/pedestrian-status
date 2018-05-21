@@ -18,10 +18,10 @@ http://litech.diandian.com/post/2012-10-12/40040708346
 https://gist.github.com/kristopherjohnson/0b0442c9b261f44cf19a
 */
 extension Double {
-	func lowPassFilter(_ filterFactor: Double, previousValue: Double) -> Double {
+	func lowPassFilter(using filterFactor: Double, with previousValue: Double) -> Double {
 		let firstSection = previousValue * filterFactor / 100
 		let secondSection = (self * (1 - filterFactor / 100))
 
-		return (firstSection + secondSection).round()
+		return (firstSection + secondSection).round(to: 3)
 	}
 }
