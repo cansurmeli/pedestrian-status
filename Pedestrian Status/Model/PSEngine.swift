@@ -9,8 +9,8 @@
 import CoreMotion
 
 struct PSEngine {
-	var stepCount = 0
-	var pedestrianStatus = "Static"
+	private(set) var stepCount = 0
+	private(set) var pedestrianStatus = "Static"
 	var lowPassFilterPercentage = 15.0
 	private var euclideanNormInASecond = [Double]()
 	
@@ -71,7 +71,8 @@ struct PSEngine {
 	private mutating func determinePedestrianStatusAndStepCount(from variance: Double) {
 		if (variance < PS.Constant.staticThreshold.rawValue) {
 			pedestrianStatus = "Static"
-		} else if ((PS.Constant.staticThreshold.rawValue <= variance) &&
+		} else if ((PS.Constant.staticThreshold.rawValue <= variance)
+								&&
 							 (variance <= PS.Constant.slowWalkingThreshold.rawValue))
 		{
 			pedestrianStatus = "Slow Walking"
@@ -80,5 +81,7 @@ struct PSEngine {
 			pedestrianStatus = "Fast Walking"
 			stepCount += 2
 		}
+		
+		print(stepCount)
 	}
 }

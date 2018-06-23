@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreLocation
 import CoreMotion
 
 class PedestrianStatusVC: UIViewController {
@@ -23,7 +22,7 @@ class PedestrianStatusVC: UIViewController {
 		motionManager.startAccelerometerUpdates(to: .main) { [unowned self] (accelerometerData, error) in
 			guard let accelerometerData = accelerometerData
 				else {
-					print(error!)
+					if let error = error { print(error) }
 
 					return
 				}
@@ -32,5 +31,11 @@ class PedestrianStatusVC: UIViewController {
 			self.pedestrianStatusLabel.text = self.psEngine.pedestrianStatus
 			self.stepCountLabel.text = String(self.psEngine.stepCount)
 		}
+	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		
+		motionManager.stopAccelerometerUpdates()
 	}
 }
