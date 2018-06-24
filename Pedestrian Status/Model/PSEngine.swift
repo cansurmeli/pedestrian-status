@@ -14,10 +14,11 @@ struct PSEngine {
 	var lowPassFilterPercentage = 15.0
 	private var euclideanNormInASecond = [Double]()
 	
-	init(initiateWith acceleration: CMAcceleration) {
+	mutating func feedAccelerationData(_ acceleration: CMAcceleration) {
 		let (rawX, rawY, rawZ) = retrieveRawAccelerationData(from: acceleration)
 		let (filteredX, filteredY, filteredZ) = applyLowPassFilter(rawX, rawY, rawZ)
 		let euclideanNorm = calculateEuclideanNorm(filteredX, filteredY, filteredZ)
+		
 		collectEuclideanNorm(euclideanNorm)
 	}
 	

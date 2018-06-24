@@ -11,7 +11,7 @@ import CoreMotion
 
 class PedestrianStatusVC: UIViewController {
 	private let motionManager = CMMotionManager()
-	private var psEngine: PSEngine!
+	private var psEngine = PSEngine()
 	@IBOutlet weak var stepCountLabel: UILabel!
 	@IBOutlet weak var pedestrianStatusLabel: UILabel!
 
@@ -20,6 +20,7 @@ class PedestrianStatusVC: UIViewController {
 		
 		motionManager.accelerometerUpdateInterval = PS.Constant.accelerometerUpdateInterval.rawValue
 		motionManager.startAccelerometerUpdates(to: .main) { [unowned self] (accelerometerData, error) in
+			
 			guard let accelerometerData = accelerometerData
 				else {
 					if let error = error { print(error) }
@@ -27,7 +28,7 @@ class PedestrianStatusVC: UIViewController {
 					return
 				}
 			
-			self.psEngine = PSEngine(initiateWith: accelerometerData.acceleration)
+			self.psEngine.feedAccelerationData(accelerometerData.acceleration)
 			self.pedestrianStatusLabel.text = self.psEngine.pedestrianStatus
 			self.stepCountLabel.text = String(self.psEngine.stepCount)
 		}
