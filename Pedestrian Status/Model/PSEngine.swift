@@ -82,7 +82,5 @@ struct PSEngine {
 			pedestrianStatus = "Fast Walking"
 			stepCount += 2
 		}
-		
-		print(stepCount)
 	}
 }
