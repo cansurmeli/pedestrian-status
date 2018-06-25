@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="2292" y="-316.19190404797604"/>
         </scene>
-        <!--Info-->
+        <!--About-->
         <scene sceneID="SF3-Sb-KgX">
             <objects>
-                <viewController title="Info" id="4AS-nU-bKe" customClass="PedestrianStatusVC" customModule="Pedestrian_Status" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About" id="4AS-nU-bKe" customClass="PedestrianStatusVC" customModule="Pedestrian_Status" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sj8-65-ePJ"/>
                         <viewControllerLayoutGuide type="bottom" id="aYy-kf-AA4"/>
@@ -120,13 +120,70 @@
                     <view key="view" contentMode="scaleToFill" id="jh4-5I-HHN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="PLR-9h-iHq">
+                                <rect key="frame" x="16" y="16" width="330" height="245.5"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hpa-MD-Ziw">
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="80.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="330" id="YkD-3S-GAN"/>
+                                            <constraint firstAttribute="height" constant="80" id="oCY-qb-61Y"/>
+                                        </constraints>
+                                        <string key="text">    Pedestrian Status measures the step
+count by analyzing the acceleration
+changes of the user while walking.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e9h-WU-hcY">
+                                        <rect key="frame" x="0.0" y="112.5" width="115" height="50.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWq-RN-zaI">
+                                                <rect key="frame" x="0.0" y="0.0" width="115" height="29"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can Sürmeli" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVs-Eu-nTS">
+                                                <rect key="frame" x="0.0" y="29" width="115" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OYl-bC-ujD">
+                                        <rect key="frame" x="0.0" y="195" width="85" height="50.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpe-w6-776">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="29"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oU9-5Q-5NQ">
+                                                <rect key="frame" x="0.0" y="29" width="85" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" name="Sunglow"/>
+                        <constraints>
+                            <constraint firstItem="PLR-9h-iHq" firstAttribute="leading" secondItem="jh4-5I-HHN" secondAttribute="leading" constant="16" id="5ex-c7-HZG"/>
+                            <constraint firstItem="PLR-9h-iHq" firstAttribute="top" secondItem="Sj8-65-ePJ" secondAttribute="bottom" constant="16" id="7g3-RV-umn"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Real-Time Data" id="Ox7-bU-SoK"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAD-KV-p5w" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4146" y="-699"/>
+            <point key="canvasLocation" x="4144.8000000000002" y="-699.40029985007504"/>
         </scene>
     </scenes>
     <resources>
