@@ -77,7 +77,19 @@
                     <view key="view" contentMode="scaleToFill" id="ot9-Zw-hn6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UNDER CONSTRUCTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctg-4X-3Dv">
+                                <rect key="frame" x="48.5" y="261" width="278" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" name="Sunglow"/>
+                        <constraints>
+                            <constraint firstItem="ctg-4X-3Dv" firstAttribute="centerY" secondItem="ot9-Zw-hn6" secondAttribute="centerY" id="5FG-mH-jx5"/>
+                            <constraint firstItem="ctg-4X-3Dv" firstAttribute="centerX" secondItem="ot9-Zw-hn6" secondAttribute="centerX" id="8vd-LE-Cba"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Real-Time Data" id="bEA-HO-jgE"/>
                 </viewController>
