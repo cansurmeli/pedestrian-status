@@ -20,6 +20,8 @@
 		3646228B1F288DE000691693 /* PedestrianStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646228A1F288DE000691693 /* PedestrianStatus.swift */; };
 		36544A3C1BAC0D35006FE574 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36544A3B1BAC0D35006FE574 /* CoreMotion.framework */; };
 		3688EB141BEC98EE00117EE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3688EB131BEC98EE00117EE8 /* CoreLocation.framework */; };
+		3698E7662133348A002FA149 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3698E7652133348A002FA149 /* DetailVC.swift */; };
+		3698E76821333CD3002FA149 /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3698E76721333CD3002FA149 /* Acceleration.swift */; };
 		36CA51DC20A572070083B434 /* PSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CA51DB20A572060083B434 /* PSEngine.swift */; };
 		36EC524120B2EEDE00F7EE39 /* Pedestrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC524020B2EEDE00F7EE39 /* Pedestrian.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +63,8 @@
 		3646228A1F288DE000691693 /* PedestrianStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedestrianStatus.swift; sourceTree = "<group>"; };
 		36544A3B1BAC0D35006FE574 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		3688EB131BEC98EE00117EE8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3698E7652133348A002FA149 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		3698E76721333CD3002FA149 /* Acceleration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acceleration.swift; sourceTree = "<group>"; };
 		36CA51DB20A572060083B434 /* PSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSEngine.swift; sourceTree = "<group>"; };
 		36EC524020B2EEDE00F7EE39 /* Pedestrian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedestrian.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				3619A83C1BAB014D00314E3C /* PedestrianStatusVC.swift */,
+				3698E7652133348A002FA149 /* DetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 			children = (
 				36CA51DB20A572060083B434 /* PSEngine.swift */,
 				36EC524020B2EEDE00F7EE39 /* Pedestrian.swift */,
+				3698E76721333CD3002FA149 /* Acceleration.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,9 +353,11 @@
 				3646227D1F27370F00691693 /* Double+LowPassFilter.swift in Sources */,
 				3646228B1F288DE000691693 /* PedestrianStatus.swift in Sources */,
 				36EC524120B2EEDE00F7EE39 /* Pedestrian.swift in Sources */,
+				3698E7662133348A002FA149 /* DetailVC.swift in Sources */,
 				364622891F288C8800691693 /* Double+Squared.swift in Sources */,
 				3619A83B1BAB014D00314E3C /* AppDelegate.swift in Sources */,
 				36CA51DC20A572070083B434 /* PSEngine.swift in Sources */,
+				3698E76821333CD3002FA149 /* Acceleration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

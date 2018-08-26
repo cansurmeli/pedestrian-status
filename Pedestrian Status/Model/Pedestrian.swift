@@ -9,12 +9,4 @@
 struct Pedestrian {
 	let stepCount: Int
 	let status: String
-	
-	let rawX: Double
-	let rawY: Double
-	let rawZ: Double
-	
-	let filteredX: Double
-	let filteredY: Double
-	let filteredZ: Double
 }

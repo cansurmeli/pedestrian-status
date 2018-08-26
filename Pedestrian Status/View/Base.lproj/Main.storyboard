@@ -70,7 +70,7 @@
         <!--Detail-->
         <scene sceneID="Eo8-1n-xrf">
             <objects>
-                <viewController title="Detail" id="AOC-eC-ahw" customClass="PedestrianStatusVC" customModule="Pedestrian_Status" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="AOC-eC-ahw" customClass="DetailVC" customModule="Pedestrian_Status" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ARz-OD-ezW"/>
                         <viewControllerLayoutGuide type="bottom" id="eL7-Tc-G0P"/>
@@ -335,7 +335,7 @@
         <!--About-->
         <scene sceneID="SF3-Sb-KgX">
             <objects>
-                <viewController title="About" id="4AS-nU-bKe" customClass="PedestrianStatusVC" customModule="Pedestrian_Status" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="About" id="4AS-nU-bKe" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sj8-65-ePJ"/>
                         <viewControllerLayoutGuide type="bottom" id="aYy-kf-AA4"/>
@@ -344,23 +344,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="PLR-9h-iHq">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="PLR-9h-iHq">
                                 <rect key="frame" x="16" y="16" width="330" height="245"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hpa-MD-Ziw">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hpa-MD-Ziw">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="330" id="YkD-3S-GAN"/>
                                             <constraint firstAttribute="height" constant="80" id="oCY-qb-61Y"/>
                                         </constraints>
-                                        <string key="text">    Pedestrian Status measures the step
+                                        <string key="text">Pedestrian Status measures the step
 count by analyzing the acceleration
 changes of the user while walking.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e9h-WU-hcY">
-                                        <rect key="frame" x="0.0" y="112" width="115" height="50.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e9h-WU-hcY">
+                                        <rect key="frame" x="107.5" y="112" width="115" height="50.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWq-RN-zaI">
                                                 <rect key="frame" x="0.0" y="0.0" width="115" height="29"/>
@@ -369,15 +369,15 @@ changes of the user while walking.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can Sürmeli" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVs-Eu-nTS">
-                                                <rect key="frame" x="0.0" y="29" width="115" height="21.5"/>
+                                                <rect key="frame" x="8.5" y="29" width="98" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OYl-bC-ujD">
-                                        <rect key="frame" x="0.0" y="194.5" width="85" height="50.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OYl-bC-ujD">
+                                        <rect key="frame" x="122.5" y="194.5" width="85" height="50.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpe-w6-776">
                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="29"/>
@@ -386,7 +386,7 @@ changes of the user while walking.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oU9-5Q-5NQ">
-                                                <rect key="frame" x="0.0" y="29" width="85" height="21.5"/>
+                                                <rect key="frame" x="30" y="29" width="25.5" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
