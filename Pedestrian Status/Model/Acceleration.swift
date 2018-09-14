@@ -7,11 +7,12 @@
 //
 
 struct Acceleration {
-	let rawX: Double
-	let rawY: Double
-	let rawZ: Double
+	var xRaw = 0.0
+	var xFiltered = 0.0
 	
-	let filteredX: Double
-	let filteredY: Double
-	let filteredZ: Double
+	var yRaw = 0.0
+	var yFiltered = 0.0
+	
+	var zRaw = 0.0
+	var zFiltered = 0.0
 }

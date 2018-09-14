@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ute-mV-YHc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ute-mV-YHc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -303,6 +303,18 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Real-Time Data" id="bEA-HO-jgE"/>
+                    <connections>
+                        <outlet property="accelerationXFilteredLabel" destination="hDA-WA-t5S" id="o1r-xy-5Qi"/>
+                        <outlet property="accelerationXRawLabel" destination="TX3-yC-8wC" id="Dxa-sb-5FH"/>
+                        <outlet property="accelerationYFilteredLabel" destination="jnZ-5g-Phe" id="O0n-Z2-Xgn"/>
+                        <outlet property="accelerationYRawLabel" destination="LiR-66-Pgv" id="huS-nU-lAk"/>
+                        <outlet property="accelerationZFilteredLabel" destination="8nZ-s5-Rca" id="Kwn-uD-G2i"/>
+                        <outlet property="accelerationZRawLabel" destination="PDA-o8-N16" id="0ba-3c-qTM"/>
+                        <outlet property="euclideanNormLabel" destination="Ptj-0i-jdX" id="XJT-EL-pxN"/>
+                        <outlet property="pedestrianStatusLabel" destination="c1j-S9-Eie" id="kvz-2J-q8C"/>
+                        <outlet property="stepCountLabel" destination="kOO-Wt-MPY" id="plQ-LW-lRa"/>
+                        <outlet property="varianceLabel" destination="eet-pz-ef7" id="UdS-q8-dZe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBO-3R-hQo" sceneMemberID="firstResponder"/>
             </objects>

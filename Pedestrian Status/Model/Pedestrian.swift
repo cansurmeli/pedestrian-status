@@ -7,6 +7,6 @@
 //
 
 struct Pedestrian {
-	let stepCount: Int
-	let status: String
+	var stepCount = 0
+	var status = "Static"
 }

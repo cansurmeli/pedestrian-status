@@ -8,13 +8,40 @@
 
 import CoreMotion
 
-struct PSEngine {
-	private(set) var stepCount = 0
-	private(set) var pedestrianStatus = "Static"
+class PSEngine {
+	static let shared = PSEngine()
+	private let motionManager = CMMotionManager()
+	private(set) var pedestrian = Pedestrian()
+	private(set) var acceleration = Acceleration()
+	private(set) var euclideanNormInASecond = [Double]()
 	var lowPassFilterPercentage = 15.0
-	private var euclideanNormInASecond = [Double]()
 	
-	mutating func feedAccelerationData(_ acceleration: CMAcceleration) {
+	private init() {
+		motionManager.accelerometerUpdateInterval = PS.Constant.accelerometerUpdateInterval.rawValue
+	}
+	
+	func start() {
+		motionManager.startAccelerometerUpdates(to: .main) { [unowned self] (accelerometerData, error) in
+			guard let accelerometerData = accelerometerData
+				else {
+					if let error = error { print(error) }
+					
+					return
+			}
+			
+			self.feedAccelerationData(accelerometerData.acceleration)
+		}
+	}
+	
+	func stop() {
+		motionManager.stopAccelerometerUpdates()
+	}
+	
+	func resetStepCount() {
+		
+	}
+	
+	private func feedAccelerationData(_ acceleration: CMAcceleration) {
 		let (rawX, rawY, rawZ) = retrieveRawAccelerationData(from: acceleration)
 		let (filteredX, filteredY, filteredZ) = applyLowPassFilter(rawX, rawY, rawZ)
 		let euclideanNorm = calculateEuclideanNorm(filteredX, filteredY, filteredZ)
@@ -42,7 +69,7 @@ struct PSEngine {
 		return sqrt(x.squared().round(to: 3) + y.squared().round(to: 3) + z.squared().round(to: 3)).round(to: 3)
 	}
 	
-	private mutating func collectEuclideanNorm(_ euclideanNorm: Double) {
+	private func collectEuclideanNorm(_ euclideanNorm: Double) {
 		guard euclideanNormInASecond.count < 10
 			else {
 				let variance = calculateVariance()
@@ -69,18 +96,18 @@ struct PSEngine {
 		return (total / euclideanNormInASecondCount).round(to: 3)
 	}
 	
-	private mutating func determinePedestrianStatusAndStepCount(from variance: Double) {
+	private func determinePedestrianStatusAndStepCount(from variance: Double) {
 		if (variance < PS.Constant.staticThreshold.rawValue) {
-			pedestrianStatus = "Static"
+			pedestrian.status = "Static"
 		} else if ((PS.Constant.staticThreshold.rawValue <= variance)
-								&&
-							 (variance <= PS.Constant.slowWalkingThreshold.rawValue))
+			&&
+			(variance <= PS.Constant.slowWalkingThreshold.rawValue))
 		{
-			pedestrianStatus = "Slow Walking"
-			stepCount += 1
+			pedestrian.status = "Slow Walking"
+			pedestrian.stepCount += 1
 		} else if (PS.Constant.slowWalkingThreshold.rawValue < variance) {
-			pedestrianStatus = "Fast Walking"
-			stepCount += 2
+			pedestrian.status = "Fast Walking"
+			pedestrian.stepCount += 2
 		}
 	}
 }

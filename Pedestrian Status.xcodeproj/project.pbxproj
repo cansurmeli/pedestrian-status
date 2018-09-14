@@ -22,7 +22,7 @@
 		3688EB141BEC98EE00117EE8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3688EB131BEC98EE00117EE8 /* CoreLocation.framework */; };
 		3698E7662133348A002FA149 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3698E7652133348A002FA149 /* DetailVC.swift */; };
 		3698E76821333CD3002FA149 /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3698E76721333CD3002FA149 /* Acceleration.swift */; };
-		36CA51DC20A572070083B434 /* PSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CA51DB20A572060083B434 /* PSEngine.swift */; };
+		3698E76E21334488002FA149 /* PSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3698E76D21334488002FA149 /* PSEngine.swift */; };
 		36EC524120B2EEDE00F7EE39 /* Pedestrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC524020B2EEDE00F7EE39 /* Pedestrian.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,7 @@
 		3688EB131BEC98EE00117EE8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3698E7652133348A002FA149 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		3698E76721333CD3002FA149 /* Acceleration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acceleration.swift; sourceTree = "<group>"; };
-		36CA51DB20A572060083B434 /* PSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSEngine.swift; sourceTree = "<group>"; };
+		3698E76D21334488002FA149 /* PSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSEngine.swift; sourceTree = "<group>"; };
 		36EC524020B2EEDE00F7EE39 /* Pedestrian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedestrian.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,9 +206,9 @@
 		36F3C4031F3CCDDA00DF4189 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				36CA51DB20A572060083B434 /* PSEngine.swift */,
 				36EC524020B2EEDE00F7EE39 /* Pedestrian.swift */,
 				3698E76721333CD3002FA149 /* Acceleration.swift */,
+				3698E76D21334488002FA149 /* PSEngine.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,9 +354,9 @@
 				3646228B1F288DE000691693 /* PedestrianStatus.swift in Sources */,
 				36EC524120B2EEDE00F7EE39 /* Pedestrian.swift in Sources */,
 				3698E7662133348A002FA149 /* DetailVC.swift in Sources */,
+				3698E76E21334488002FA149 /* PSEngine.swift in Sources */,
 				364622891F288C8800691693 /* Double+Squared.swift in Sources */,
 				3619A83B1BAB014D00314E3C /* AppDelegate.swift in Sources */,
-				36CA51DC20A572070083B434 /* PSEngine.swift in Sources */,
 				3698E76821333CD3002FA149 /* Acceleration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
