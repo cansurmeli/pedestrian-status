@@ -42,9 +42,11 @@ class PSEngine {
 	}
 	
 	private func feedAccelerationData(_ acceleration: CMAcceleration) {
-		let (rawX, rawY, rawZ) = retrieveRawAccelerationData(from: acceleration)
-		let (filteredX, filteredY, filteredZ) = applyLowPassFilter(rawX, rawY, rawZ)
-		let euclideanNorm = calculateEuclideanNorm(filteredX, filteredY, filteredZ)
+		(self.acceleration.xRaw, self.acceleration.yRaw, self.acceleration.zRaw) = retrieveRawAccelerationData(from: acceleration)
+		
+		(self.acceleration.xFiltered, self.acceleration.yFiltered, self.acceleration.zFiltered) = applyLowPassFilter(self.acceleration.xRaw, self.acceleration.yRaw, self.acceleration.zRaw)
+		
+		let euclideanNorm = calculateEuclideanNorm(self.acceleration.xFiltered, self.acceleration.yFiltered, self.acceleration.zFiltered)
 		
 		collectEuclideanNorm(euclideanNorm)
 	}
@@ -98,15 +100,15 @@ class PSEngine {
 	
 	private func determinePedestrianStatusAndStepCount(from variance: Double) {
 		if (variance < PS.Constant.staticThreshold.rawValue) {
-			pedestrian.status = "Static"
+			pedestrian.status = "static"
 		} else if ((PS.Constant.staticThreshold.rawValue <= variance)
 			&&
 			(variance <= PS.Constant.slowWalkingThreshold.rawValue))
 		{
-			pedestrian.status = "Slow Walking"
+			pedestrian.status = "slow Walking"
 			pedestrian.stepCount += 1
 		} else if (PS.Constant.slowWalkingThreshold.rawValue < variance) {
-			pedestrian.status = "Fast Walking"
+			pedestrian.status = "fast walking"
 			pedestrian.stepCount += 2
 		}
 	}

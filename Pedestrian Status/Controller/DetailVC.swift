@@ -41,7 +41,8 @@ class DetailVC: UIViewController {
 																								self.accelerationZRawLabel.text = String(PSEngine.shared.acceleration.zRaw)
 																								self.accelerationZFilteredLabel.text = String(PSEngine.shared.acceleration.zFiltered)
 																								
-																								
+																								guard let euclideanNorm = PSEngine.shared.euclideanNormInASecond.last else { return }
+																								self.euclideanNormLabel.text = String(euclideanNorm)
 		})
 		
 		dataUpdateTimer.fire()

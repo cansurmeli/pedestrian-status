@@ -275,30 +275,10 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="1Dm-GJ-d4z">
-                                <rect key="frame" x="107.5" y="463" width="160" height="64"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryw-NI-1ij">
-                                        <rect key="frame" x="0.0" y="0.0" width="24" height="64"/>
-                                        <state key="normal" image="Button:PresentLogs"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wI-n7-Gtl">
-                                        <rect key="frame" x="48" y="0.0" width="64" height="64"/>
-                                        <state key="normal" image="Button:Record"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vri-Ji-kA5">
-                                        <rect key="frame" x="136" y="0.0" width="24" height="64"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                        <state key="normal" image="Button:Share"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="Sunglow"/>
                         <constraints>
                             <constraint firstItem="IAi-R6-0eK" firstAttribute="centerX" secondItem="ot9-Zw-hn6" secondAttribute="centerX" id="AaQ-IR-saq"/>
-                            <constraint firstItem="eL7-Tc-G0P" firstAttribute="top" secondItem="1Dm-GJ-d4z" secondAttribute="bottom" constant="24" id="HKW-UK-U4y"/>
-                            <constraint firstItem="1Dm-GJ-d4z" firstAttribute="centerX" secondItem="ot9-Zw-hn6" secondAttribute="centerX" id="UlA-dy-U0w"/>
                             <constraint firstItem="IAi-R6-0eK" firstAttribute="top" secondItem="ARz-OD-ezW" secondAttribute="bottom" constant="8" id="mXt-u6-xjL"/>
                         </constraints>
                     </view>
@@ -357,17 +337,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="PLR-9h-iHq">
-                                <rect key="frame" x="16" y="16" width="330" height="245"/>
+                                <rect key="frame" x="22.5" y="16" width="330" height="245"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hpa-MD-Ziw">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Pedestrian Status measures the step count by analyzing the acceleration changes of the user while walking." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hpa-MD-Ziw">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="330" id="YkD-3S-GAN"/>
                                             <constraint firstAttribute="height" constant="80" id="oCY-qb-61Y"/>
                                         </constraints>
-                                        <string key="text">Pedestrian Status measures the step
-count by analyzing the acceleration
-changes of the user while walking.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -410,8 +387,8 @@ changes of the user while walking.</string>
                         </subviews>
                         <color key="backgroundColor" name="Sunglow"/>
                         <constraints>
-                            <constraint firstItem="PLR-9h-iHq" firstAttribute="leading" secondItem="jh4-5I-HHN" secondAttribute="leading" constant="16" id="5ex-c7-HZG"/>
                             <constraint firstItem="PLR-9h-iHq" firstAttribute="top" secondItem="Sj8-65-ePJ" secondAttribute="bottom" constant="16" id="7g3-RV-umn"/>
+                            <constraint firstItem="PLR-9h-iHq" firstAttribute="centerX" secondItem="jh4-5I-HHN" secondAttribute="centerX" id="HA3-cW-NyX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Real-Time Data" id="Ox7-bU-SoK"/>
@@ -422,9 +399,6 @@ changes of the user while walking.</string>
         </scene>
     </scenes>
     <resources>
-        <image name="Button:PresentLogs" width="24" height="33"/>
-        <image name="Button:Record" width="64" height="64"/>
-        <image name="Button:Share" width="24" height="37"/>
         <image name="Detail" width="24" height="24"/>
         <image name="Info" width="24" height="24"/>
         <namedColor name="ColorSunglow">
