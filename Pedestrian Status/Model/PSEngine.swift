@@ -10,16 +10,17 @@ import CoreMotion
 
 class PSEngine {
 	static let shared = PSEngine()
-	private let motionManager = CMMotionManager()
+	private let motionManager: CMMotionManager = {
+		$0.accelerometerUpdateInterval = PS.Constant.accelerometerUpdateInterval.rawValue
+		
+		return $0
+	}(CMMotionManager())
 	private(set) var pedestrian = Pedestrian()
 	private(set) var acceleration = Acceleration()
 	private(set) var euclideanNormInASecond = [Double]()
 	var lowPassFilterPercentage = 15.0
 	
-	private init() {
-		motionManager.accelerometerUpdateInterval = PS.Constant.accelerometerUpdateInterval.rawValue
-	}
-	
+	// MARK: Control Functions
 	func start() {
 		motionManager.startAccelerometerUpdates(to: .main) { [unowned self] (accelerometerData, error) in
 			guard let accelerometerData = accelerometerData
@@ -29,7 +30,7 @@ class PSEngine {
 					return
 			}
 			
-			self.feedAccelerationData(accelerometerData.acceleration)
+			self.processAccelerationData(accelerometerData.acceleration)
 		}
 	}
 	
@@ -38,15 +39,25 @@ class PSEngine {
 	}
 	
 	func resetStepCount() {
-		
+		pedestrian.stepCount = 0
+		euclideanNormInASecond.removeAll()
 	}
 	
-	private func feedAccelerationData(_ acceleration: CMAcceleration) {
-		(self.acceleration.xRaw, self.acceleration.yRaw, self.acceleration.zRaw) = retrieveRawAccelerationData(from: acceleration)
+	// MARK: Engine Operations
+	private func processAccelerationData(_ acceleration: CMAcceleration) {
+		(self.acceleration.xRaw,
+		 self.acceleration.yRaw,
+		 self.acceleration.zRaw) = retrieveRawAccelerationData(from: acceleration)
 		
-		(self.acceleration.xFiltered, self.acceleration.yFiltered, self.acceleration.zFiltered) = applyLowPassFilter(self.acceleration.xRaw, self.acceleration.yRaw, self.acceleration.zRaw)
+		(self.acceleration.xFiltered,
+		 self.acceleration.yFiltered,
+		 self.acceleration.zFiltered) = applyLowPassFilter(self.acceleration.xRaw,
+																											 self.acceleration.yRaw,
+																											 self.acceleration.zRaw)
 		
-		let euclideanNorm = calculateEuclideanNorm(self.acceleration.xFiltered, self.acceleration.yFiltered, self.acceleration.zFiltered)
+		let euclideanNorm = calculateEuclideanNorm(self.acceleration.xFiltered,
+																							 self.acceleration.yFiltered,
+																							 self.acceleration.zFiltered)
 		
 		collectEuclideanNorm(euclideanNorm)
 	}
