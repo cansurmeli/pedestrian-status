@@ -1,7 +1,8 @@
 # Pedestrian Status
-Pedestrian Status is a step detection app written with Swift. It does so by analysing the acceleration of it’s user while he/she is holding his/her iPhone.
 
-![](http://www.cansurmeli.com/gitHub/pedestrian-status/pedestrian-status-app-screenshot.jpg)
+Pedestrian Status is a step detection app written with Swift. It does so by analysing the acceleration of its user while he/she is holding his/her iPhone.
+
+![Pedestrian Status Screenshot](images/screenshot.jpg)
 
 ## Description
 
@@ -11,23 +12,26 @@ The above researches algorithm provides three statuses: static, slow walking or 
 
 It’s known that Pedestrian status is not without it’s flaws. Currently, the iPhone running Pedestrian Status should be hold at the waistline level and parallel to the floor. Like below:
 
-![](http://www.cansurmeli.com/gitHub/pedestrian-status/pedestrian-status-required-walking-style.jpg)
+![Walking Style](images/walking-style.jpg)
 
 Also sharply moving the hand will result in additionally detected steps as it will be detected as acceleration enough to be classified as a step.
 
 Pedestrian Status is a proof-of-concept. Therefore such shortcomings as explained above are present. In a future version, it will probably be much more agile.
 
 ## Usage
+
 Just download the project and run it on an iPhone.
 
 An iPad will also work but it’s more appropriate to move with an iPhone.
 
 ## Requirements
+
 - Xcode 9 beta 1 or higher
 - Swift 4.0
 - ARC
 
 ## Future Work
+
 - recording sensor data
 - dynamic acceleration threshold calculation
 - recognising unnecessary hand movements
