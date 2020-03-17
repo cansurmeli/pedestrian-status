@@ -47,5 +47,9 @@ class DetailVC: UIViewController {
 		
 		dataUpdateTimer.fire()
 	}
+	
+	@IBAction func dismissView(_ sender: Any) {
+		dismiss(animated: true, completion: nil)
+	}
 }
 
