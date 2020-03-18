@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYx-9a-mfH">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" name="Sunglow"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Em4-B0-YlE">
                                 <rect key="frame" x="160.66666666666666" y="405" width="93" height="86"/>
                                 <subviews>
@@ -33,10 +37,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" name="Sunglow"/>
+                        <color key="backgroundColor" name="Orange-Yellow"/>
                         <constraints>
+                            <constraint firstItem="pYx-9a-mfH" firstAttribute="bottom" secondItem="UiP-jH-5nW" secondAttribute="bottom" id="15I-r7-6RO"/>
+                            <constraint firstItem="pYx-9a-mfH" firstAttribute="leading" secondItem="UiP-jH-5nW" secondAttribute="leading" id="K0z-JI-Orh"/>
+                            <constraint firstItem="pYx-9a-mfH" firstAttribute="top" secondItem="UiP-jH-5nW" secondAttribute="top" id="NVe-zr-N5m"/>
                             <constraint firstItem="Em4-B0-YlE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XZK-zm-cVA"/>
                             <constraint firstItem="Em4-B0-YlE" firstAttribute="centerX" secondItem="UiP-jH-5nW" secondAttribute="centerX" id="ojs-aq-wpE"/>
+                            <constraint firstItem="pYx-9a-mfH" firstAttribute="trailing" secondItem="UiP-jH-5nW" secondAttribute="trailing" id="tC4-tF-ach"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UiP-jH-5nW"/>
                     </view>
@@ -61,7 +69,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3177" y="-316"/>
+            <point key="canvasLocation" x="3176.811594202899" y="-316.07142857142856"/>
         </scene>
         <!--Detail-->
         <scene sceneID="Eo8-1n-xrf">
@@ -334,12 +342,12 @@
             <objects>
                 <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="ute-mV-YHc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="8V9-0H-6PA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="8V9-0H-6PA">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="Sunglow"/>
+                        <color key="backgroundColor" name="Orange-Yellow"/>
                         <color key="tintColor" name="Smoky Black"/>
-                        <color key="barTintColor" name="Sunglow"/>
+                        <color key="barTintColor" name="Orange-Yellow"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -458,6 +466,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gVi-Mq-FmE"/>
                     </view>
+                    <connections>
+                        <outlet property="versionNumberLabel" destination="CIs-Sw-EUl" id="0sK-Rx-wAf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAD-KV-p5w" sceneMemberID="firstResponder"/>
             </objects>
