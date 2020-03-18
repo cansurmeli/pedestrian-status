@@ -9,6 +9,14 @@
 import UIKit
 
 class AboutVC: UIViewController {
+	@IBOutlet weak var versionNumberLabel: UILabel!
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+		versionNumberLabel.text = Bundle.versionNumber()
+	}
+	
 	@IBAction func dismissView(_ sender: Any) {
 		dismiss(animated: true, completion: nil)
 	}

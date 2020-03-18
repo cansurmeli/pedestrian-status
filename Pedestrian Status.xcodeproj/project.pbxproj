@@ -24,6 +24,7 @@
 		3698E76821333CD3002FA149 /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3698E76721333CD3002FA149 /* Acceleration.swift */; };
 		3698E76E21334488002FA149 /* PSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3698E76D21334488002FA149 /* PSEngine.swift */; };
 		36A26B08242118D300E87B8B /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A26B07242118D300E87B8B /* AboutVC.swift */; };
+		36B1AF182422350F00002AAF /* Bundle+VersionNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B1AF172422350F00002AAF /* Bundle+VersionNumber.swift */; };
 		36EC524120B2EEDE00F7EE39 /* Pedestrian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36EC524020B2EEDE00F7EE39 /* Pedestrian.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		3698E76721333CD3002FA149 /* Acceleration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acceleration.swift; sourceTree = "<group>"; };
 		3698E76D21334488002FA149 /* PSEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSEngine.swift; sourceTree = "<group>"; };
 		36A26B07242118D300E87B8B /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		36B1AF172422350F00002AAF /* Bundle+VersionNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+VersionNumber.swift"; sourceTree = "<group>"; };
 		36EC524020B2EEDE00F7EE39 /* Pedestrian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pedestrian.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 		364622781F2736D000691693 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				36B1AF162422350000002AAF /* Bundle */,
 				364622791F2736DA00691693 /* Double */,
 			);
 			path = Extension;
@@ -204,6 +207,14 @@
 				36A26B07242118D300E87B8B /* AboutVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		36B1AF162422350000002AAF /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				36B1AF172422350F00002AAF /* Bundle+VersionNumber.swift */,
+			);
+			path = Bundle;
 			sourceTree = "<group>";
 		};
 		36F3C4031F3CCDDA00DF4189 /* Model */ = {
@@ -356,6 +367,7 @@
 				3646227D1F27370F00691693 /* Double+LowPassFilter.swift in Sources */,
 				3646228B1F288DE000691693 /* PedestrianStatus.swift in Sources */,
 				36EC524120B2EEDE00F7EE39 /* Pedestrian.swift in Sources */,
+				36B1AF182422350F00002AAF /* Bundle+VersionNumber.swift in Sources */,
 				3698E7662133348A002FA149 /* DetailVC.swift in Sources */,
 				3698E76E21334488002FA149 /* PSEngine.swift in Sources */,
 				364622891F288C8800691693 /* Double+Squared.swift in Sources */,
@@ -462,7 +474,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -510,7 +522,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -524,7 +536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3KDTV5NX96;
 				INFOPLIST_FILE = "$(SRCROOT)/Pedestrian Status/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.can.Pedestrian-Status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -538,7 +550,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3KDTV5NX96;
 				INFOPLIST_FILE = "$(SRCROOT)/Pedestrian Status/Other/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.can.Pedestrian-Status";
 				PRODUCT_NAME = "$(TARGET_NAME)";
