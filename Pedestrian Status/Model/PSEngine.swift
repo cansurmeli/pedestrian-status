@@ -18,7 +18,8 @@ class PSEngine {
 	private(set) var pedestrian = Pedestrian()
 	private(set) var acceleration = Acceleration()
 	private(set) var euclideanNormInASecond = [Double]()
-	var lowPassFilterPercentage = 15.0
+	private(set) var variance: Double = 0.0
+	private let lowPassFilterPercentage = 15.0
 	
 	// MARK: Control Functions
 	func start() {
@@ -106,7 +107,9 @@ class PSEngine {
 		}
 		total = total.round(to: 3)
 		
-		return (total / euclideanNormInASecondCount).round(to: 3)
+		variance = (total / euclideanNormInASecondCount).round(to: 3)
+		
+		return variance
 	}
 	
 	private func determinePedestrianStatusAndStepCount(from variance: Double) {

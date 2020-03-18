@@ -43,6 +43,8 @@ class DetailVC: UIViewController {
 																								
 																								guard let euclideanNorm = PSEngine.shared.euclideanNormInASecond.last else { return }
 																								self.euclideanNormLabel.text = String(euclideanNorm)
+																								
+																								self.varianceLabel.text = String(PSEngine.shared.variance)
 		})
 		
 		dataUpdateTimer.fire()
