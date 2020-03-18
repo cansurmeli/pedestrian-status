@@ -12,4 +12,10 @@ class AboutVC: UIViewController {
 	@IBAction func dismissView(_ sender: Any) {
 		dismiss(animated: true, completion: nil)
 	}
+	
+	@IBAction func visitGithubProject(_ sender: Any) {
+		UIApplication.shared.open(URL(string: "https://github.com/cansurmeli/pedestrian-status")!,
+															options: [:],
+															completionHandler: nil)
+	}
 }

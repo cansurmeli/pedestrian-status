@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ute-mV-YHc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ute-mV-YHc">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,10 +13,6 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="Pedestrian Status" extendedLayoutIncludesOpaqueBars="YES" id="BYZ-38-t0r" customClass="PedestrianStatusVC" customModule="Pedestrian_Status" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,8 +36,9 @@
                         <color key="backgroundColor" name="ColorSunglow"/>
                         <constraints>
                             <constraint firstItem="Em4-B0-YlE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XZK-zm-cVA"/>
-                            <constraint firstItem="Em4-B0-YlE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ojs-aq-wpE"/>
+                            <constraint firstItem="Em4-B0-YlE" firstAttribute="centerX" secondItem="UiP-jH-5nW" secondAttribute="centerX" id="ojs-aq-wpE"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="UiP-jH-5nW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pedestrian Status" id="5mv-cJ-241">
                         <barButtonItem key="leftBarButtonItem" title="Info" image="Info" id="wqe-7c-2jx">
@@ -69,10 +67,6 @@
         <scene sceneID="Eo8-1n-xrf">
             <objects>
                 <viewController title="Detail" extendedLayoutIncludesOpaqueBars="YES" id="AOC-eC-ahw" customClass="DetailVC" customModule="Pedestrian_Status" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ARz-OD-ezW"/>
-                        <viewControllerLayoutGuide type="bottom" id="eL7-Tc-G0P"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ot9-Zw-hn6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -310,11 +304,12 @@
                         <color key="backgroundColor" name="Sunglow"/>
                         <constraints>
                             <constraint firstItem="IAi-R6-0eK" firstAttribute="top" secondItem="jUt-OH-aeV" secondAttribute="bottom" constant="24" id="FVf-tX-oY5"/>
-                            <constraint firstItem="jUt-OH-aeV" firstAttribute="leading" secondItem="ot9-Zw-hn6" secondAttribute="leading" symbolic="YES" id="MHX-vB-caR"/>
-                            <constraint firstItem="jUt-OH-aeV" firstAttribute="top" secondItem="ARz-OD-ezW" secondAttribute="bottom" symbolic="YES" id="waP-Rl-oDz"/>
-                            <constraint firstAttribute="trailing" secondItem="jUt-OH-aeV" secondAttribute="trailing" symbolic="YES" id="wgh-gq-Ysm"/>
-                            <constraint firstItem="IAi-R6-0eK" firstAttribute="centerX" secondItem="ot9-Zw-hn6" secondAttribute="centerX" id="wod-lS-Nac"/>
+                            <constraint firstItem="jUt-OH-aeV" firstAttribute="leading" secondItem="HkZ-4j-Mog" secondAttribute="leading" symbolic="YES" id="MHX-vB-caR"/>
+                            <constraint firstItem="jUt-OH-aeV" firstAttribute="top" secondItem="HkZ-4j-Mog" secondAttribute="top" symbolic="YES" id="waP-Rl-oDz"/>
+                            <constraint firstItem="HkZ-4j-Mog" firstAttribute="trailing" secondItem="jUt-OH-aeV" secondAttribute="trailing" symbolic="YES" id="wgh-gq-Ysm"/>
+                            <constraint firstItem="IAi-R6-0eK" firstAttribute="centerX" secondItem="HkZ-4j-Mog" secondAttribute="centerX" id="wod-lS-Nac"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="HkZ-4j-Mog"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Real-Time Data" id="bEA-HO-jgE"/>
                     <connections>
@@ -339,9 +334,8 @@
             <objects>
                 <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="ute-mV-YHc" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="8V9-0H-6PA">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="Orange-Yellow"/>
                         <color key="tintColor" name="Smoky Black"/>
@@ -366,10 +360,6 @@
         <scene sceneID="SF3-Sb-KgX">
             <objects>
                 <viewController title="About" extendedLayoutIncludesOpaqueBars="YES" id="4AS-nU-bKe" customClass="AboutVC" customModule="Pedestrian_Status" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Sj8-65-ePJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="aYy-kf-AA4"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jh4-5I-HHN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -390,9 +380,9 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ZO5-iF-IWo">
-                                <rect key="frame" x="42" y="80.000000000000014" width="330" height="237.33333333333337"/>
+                                <rect key="frame" x="42" y="80" width="330" height="313.33333333333331"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Pedestrian Status measures the step count by analyzing the acceleration changes of the user while walking." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3yw-4A-Yz5">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Pedestrian Status measures the step count by analysing the acceleration changes of the user while walking." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3yw-4A-Yz5">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="6bb-k6-GsS"/>
@@ -435,17 +425,38 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ypn-Ia-9x3">
+                                        <rect key="frame" x="37" y="269.33333333333331" width="256" height="44"/>
+                                        <color key="backgroundColor" name="Coral Red"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="XP8-iR-1xX"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="256" id="uTA-hs-4AA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="Visit Github Project">
+                                            <color key="titleColor" name="Platinum"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="visitGithubProject:" destination="4AS-nU-bKe" eventType="touchUpInside" id="RHp-Uw-Fwr"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" name="Sunglow"/>
                         <constraints>
-                            <constraint firstItem="Noj-RL-6oq" firstAttribute="leading" secondItem="jh4-5I-HHN" secondAttribute="leading" symbolic="YES" id="2Tm-GU-cyu"/>
-                            <constraint firstAttribute="trailing" secondItem="Noj-RL-6oq" secondAttribute="trailing" symbolic="YES" id="Ov9-Xg-eVL"/>
-                            <constraint firstItem="ZO5-iF-IWo" firstAttribute="centerX" secondItem="jh4-5I-HHN" secondAttribute="centerX" id="VhR-6Z-UOb"/>
-                            <constraint firstItem="Noj-RL-6oq" firstAttribute="top" secondItem="Sj8-65-ePJ" secondAttribute="bottom" symbolic="YES" id="tWn-ML-JxX"/>
+                            <constraint firstItem="Noj-RL-6oq" firstAttribute="leading" secondItem="gVi-Mq-FmE" secondAttribute="leading" symbolic="YES" id="2Tm-GU-cyu"/>
+                            <constraint firstItem="gVi-Mq-FmE" firstAttribute="trailing" secondItem="Noj-RL-6oq" secondAttribute="trailing" symbolic="YES" id="Ov9-Xg-eVL"/>
+                            <constraint firstItem="ZO5-iF-IWo" firstAttribute="centerX" secondItem="gVi-Mq-FmE" secondAttribute="centerX" id="VhR-6Z-UOb"/>
+                            <constraint firstItem="Noj-RL-6oq" firstAttribute="top" secondItem="gVi-Mq-FmE" secondAttribute="top" symbolic="YES" id="tWn-ML-JxX"/>
                             <constraint firstItem="ZO5-iF-IWo" firstAttribute="top" secondItem="Noj-RL-6oq" secondAttribute="bottom" constant="24" id="vbT-Rq-Zh2"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="gVi-Mq-FmE"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HAD-KV-p5w" sceneMemberID="firstResponder"/>
@@ -462,8 +473,14 @@
         <namedColor name="ColorSunglow">
             <color red="0.99215686274509807" green="0.792156862745098" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="Coral Red">
+            <color red="1" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="Orange-Yellow">
             <color red="0.99215686274509807" green="0.82745098039215681" blue="0.3843137254901961" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Platinum">
+            <color red="0.90196078431372551" green="0.90980392156862744" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Smoky Black">
             <color red="0.031372549019607843" green="0.027450980392156862" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
